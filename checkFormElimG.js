@@ -71,7 +71,7 @@ function validateForm() {
             corretto = true;
         }
     }    
-    if(!corretto) {
+    if(corretto) {
         alert("Seleziona almeno una casella");  
     }
     return corretto;
