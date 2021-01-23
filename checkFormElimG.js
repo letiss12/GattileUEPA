@@ -102,7 +102,7 @@ function controlla(x) {
         }
     }
     if (!scelto){
-    mostraErrore(); 
+        alert("Almeno uno dei campi devono essere spuntati!");
     }
     return scelto;
     }
