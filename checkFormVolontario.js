@@ -1,63 +1,41 @@
-var dettagli_form = {
-	"nome": ["Nome",/([a-zA-Z]){2,20}$/ ,"Inserisci il tuo nome"],
-	"cognome": ["Cognome",/([a-zA-Z]){2,20}$/ ,"Inserisci il tuo cognome"],
-	"dataNascita": ["Data di Nascita",,"Inserisci la tua data di nascita in formato GG/MM/AAAA" ],
-	"citta": ["Città di residenza", ,"Inserisci il nome della città in cui risiedi"],
-	"telefono": ["Numero di telefono", /\d{9,10}/ ,"Inserisci il tuo numero di telefono (cellulare o fisso)"],
-	"oreVol": ["Ore da dedicare al volontariato", /\d{1,3}/ ,"Inserisci in formato numerico il numero di ore che puoi dedicare settimanalmente al volontariato"],
-	"motivazione": ["Motivazione", /.{30,}/ ,"Spiega per quale motivo vorresti diventare volontario presso il Rifugio U.E.P.A. "]
+var campiForm = {
+	"nome": ["Inserisci il tuo nome", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/ ],
+	"cognome": ["Inserisci il tuo cognome", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/],
+	"dataNascita": ["Inserisci la tua data di nascita in formato GG/MM/AAAA", /^(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19\d{2}|20\d{2})$/],
+    "citta": ["Inserisci il nome della città in cui risiedi", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/],
+	"telefono": ["Inserisci il tuo numero di telefono (cellulare o fisso)", /\d{9,10}/],
+	"oreVol": ["Inserisci in formato numerico il numero di ore che puoi dedicare al volontariato", /\d{1,3}/],
+	"motivazione": ["Spiega per quale motivo vorresti diventare volontario presso il Rifugio U.E.P.A.", /.{30,}/]
 };
 
 function campoDefault(input) {
-    
-    input.className = "default-text"; // mi permette di definire il colore
-    input.value = dettagli_form[input.id][0];
-
+    input.value = "";
 }
 
-// devo farlo quando l'utente fa focus sulla casella di testo
-function campoPerInput(input) {
-    if (input.value == dettagli_form[input.id][0]) {
-        input.value == "";
-        input.className = "";
-    }
-}
-
-// la invochiamo quando carichiamo la pag html
 function caricamento() {
-
-    for (var key in dettagli_form) {
+    for (var key in campiForm) {
         var input = document.getElementById(key);
         campoDefault(input);
-        input.onfocus = function() {campoPerInput(this);};
     }
 }
 
 function mostraErrore(input) {
-
-    var elemento = document.createElement("strong"); // nuovo elemento strong con la classe errore 
-    elemento.className = "errori";
-    elemento.appendChild(document.createTextNode(dettagli_form[input.id][2]));
-    
-    var p = input.parentNode; // lo span 
-    p.appendChild(elemento); // 
+    var elemento = document.createElement("strong");
+    elemento.className = "erroreForm";
+    elemento.appendChild(document.createTextNode(campiForm[input.id][0]));
+    var p = input.parentNode; 
+    p.appendChild(elemento); 
 }
 
-
 function validazioneCampo(input) {
-
-    var parent = input.parentNode; // recupero lo span dentro il quale c'è l'input
+    var parent = input.parentNode;
     if (parent.children.length == 2) {
         parent.removeChild(parent.children[1]);
     }
-
-    var regex = dettagli_form[input.id][1]; // dell elemento input che sto testando con key id elemento 1 che è espressione regolare
+    var regex = campiForm[input.id][1]; 
     var text = input.value;
-    if (text.search(regex) != 0) { // search restituisce il punto da cui parte l'espressione regolare , se è 0 parte dall'inizio
-    //se è -1 non c'è, se c'è 7 allora parte dalla posizione 7
-    //o non ho trovato l'espressione regolare o l'espressione regolare parte più avanti
+    if (text.search(regex) != 0) { 
         mostraErrore(input);
-
         return false;
     } else {
         return true;
@@ -67,14 +45,11 @@ function validazioneCampo(input) {
 
 
 function validateForm() {
-    // itera gli elementi dentro dettagli form 
-
     var corretto = true;
-    for (var key in dettagli_form) {
+    for (var key in campiForm) {
         var input = document.getElementById(key);
         var risultato = validazioneCampo(input);
         corretto = corretto && risultato;
-
     }
     return corretto;
 }
