@@ -11,16 +11,20 @@
     <meta name="author" content="" />
     <meta name="language" content="italian it" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
+    <script type="text/javascript" src="checkFormCaselle.js"></script>
 
 </head>
 <body>
     <div class="contenutoGenerale">
         <h2>Rimuovi un volontario </h2>
-        <form method="POST" action="eliminaVolontario.php">
+        <span>
+        <form method="POST" action="eliminaVolontario.php" onsubmit="controlla(this)">
             <messaggiForm />
             <valoreForm />
         </form>
+        </span>
+        <p>aaaaaaa</p>
     </div>
-
+    <p>bbbbbbb</p>
 </body>
 </html>
