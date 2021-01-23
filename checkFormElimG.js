@@ -61,7 +61,7 @@ function controlloCheckbox()
   }
   return controllo;
 }
-*/
+
 
 function validateForm() {
     var corretto = false;
@@ -78,7 +78,7 @@ function validateForm() {
 }
 
 
-    /*
+*/
 
 function controlla(x) {
     var scelto = false;
@@ -92,4 +92,17 @@ function controlla(x) {
     }
     return scelto;
     }
+
+
+    /*
+function Controlla(ff){
+    var conta=0
+    for(var i=0;i<ff.elements['checkarray[]'].length;i++)
+    if(ff.elements['checkarray[]'][i].checked)conta++
+    if(conta==0){
+    alert('Selezionare almeno un check')
+    return false
+}   else return true
+}
+
 */
