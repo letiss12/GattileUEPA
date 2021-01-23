@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
         }
         else {
             $dbAccess->closeDBConnection();
-            $messaggioPerForm = '<div class="messForm"><ul>';
+            $messaggioPerForm .= '<div class="messForm"><ul>';
             if ($matchN == false) {
                 $messaggioPerForm .= '<li>Il nome del gatto è troppo corto per essere inserito</li>';
             }
