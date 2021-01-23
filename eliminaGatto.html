@@ -11,12 +11,13 @@
     <meta name="author" content="" />
     <meta name="language" content="italian it" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
+    <script type="text/javascript" src="checkFormElimG.js"></script>
 
 </head>
 <body>
     <div class="contenutoGenerale">
         <h2>Rimuovi un gatto dal rifugio</h2>
-        <form method="POST" action="eliminaGatto.php">
+        <form method="POST" action="eliminaGatto.php" onsubmit="return validateForm()">
             <messaggiForm />
             <valoreForm />
         </form>
