@@ -372,3 +372,9 @@ SEZIONE FOOTER
 #imgValidCSS{
     float: right;
 }
+
+.erroreForm {
+    color: greenyellow;
+    margin-left: 3em;
+    display: block;
+}
