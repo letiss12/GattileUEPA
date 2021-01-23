@@ -49,6 +49,7 @@ function validateForm() {
     }
     return corretto;
 }
+*/
 
 function controlloCheckbox()
 {
@@ -66,26 +67,17 @@ function controlloCheckbox()
 function validateForm()
 {
     var corretto = true;
-
-    for (var key in campiForm) {
-        var input = document.getElementsByTagName(input)
-        var risultato = validazioneCampo(input);
-        corretto = corretto && risultato;
-    }
-    return corretto;
-
-
-    if(!controlloCheckbox())
+    corretto = controlloCheckbox()
+    if(!corretto)
     {
         alert("Seleziona almeno una casella");  
-        return false;
     }
-    return true;
+    return corretto;
 }
 
 
 
-*/
+/*
 function mostraErrore() {
     var elemento = document.createElement("strong");
     elemento.className = "erroreForm";
@@ -106,3 +98,4 @@ function controlla(x) {
     }
     return scelto;
     }
+*/
