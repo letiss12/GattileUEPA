@@ -21,11 +21,11 @@ if (isset($_POST['submit'])) {
     if (preg_match($regexN, $nome)) {
         $matchN = true;
     } else {
-        $matchN = flase;
+        $matchN = false;
     }
     if ($matchN == true) {
         $messaggioPerForm = '<p>match true</p>';
-    } else if ($matchN == flase) {
+    } else if ($matchN == false) {
         $messaggioPerForm = '<p>match false</p>';
     }
 
