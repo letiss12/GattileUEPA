@@ -23,6 +23,11 @@ if (isset($_POST['submit'])) {
     } else {
         $matchN = flase;
     }
+    if ($matchN == true) {
+        echo "match true";
+    } else if ($matchN == flase) {
+        echo "match false"
+    }
 
     $dbAccess = new DBAccess();
     $openDBConnection = $dbAccess->openDBConnection();
