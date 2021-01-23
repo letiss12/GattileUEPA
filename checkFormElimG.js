@@ -1,10 +1,9 @@
-var campiForm = {
+/*var campiForm = {
     "nome": ["Inserisci il nome del gatto", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/ ],
     "descrizione" : ["Inserisci una breve descrizione del gatto", /.{10,}/]
 	};
 
 
-    /*
 function campoDefault(input) {
     input.value = "";
 }
@@ -83,7 +82,7 @@ function validateForm()
     }
     return true;
 }
-*/
+
 
 function controllo() {
     var scelto = false;
@@ -98,3 +97,15 @@ function controllo() {
     }
     return (true);
 }
+*/
+
+function controlla(frm) {
+    var rv = false;
+    for (var i=0;i<frm.elements.length;i++){
+    if (frm.elements[i].type && frm.elements[i].type.toLowerCase() =="checkbox" && frm.elements[i].checked) rv=true;
+    }
+    if (!rv){
+    alert("Almeno uno dei campi devono essere spuntati!"); 
+    }
+    return rv;
+    }
