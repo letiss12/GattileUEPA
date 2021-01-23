@@ -23,10 +23,13 @@ if (isset($_POST['submit'])) {
     } else {
         $matchN = false;
     }
-    if ($matchN == true) {
-        $messaggioPerForm = '<p>match true</p>';
-    } else if ($matchN == false) {
-        $messaggioPerForm = '<p>match false</p>';
+
+    $matchD = '';
+    $regexD = '/.{10,}/';
+    if (preg_match($regexD, $descrizione)) {
+        $matchD = true;
+    } else {
+        $matchD = false;
     }
 
     $dbAccess = new DBAccess();
@@ -36,7 +39,7 @@ if (isset($_POST['submit'])) {
         die ("C'è stato un errore durante l'apertura del database");
     } else {
 
-        if ($matchN==true && strlen($descrizione) >= 10) {
+        if ($matchN==true && $matchD == true) {
             $risultatoInserimento = $dbAccess->inserisciGatto($nome, $genere, $adozione, $descrizione, $imm); 
             $dbAccess->closeDBConnection();
 
@@ -53,7 +56,7 @@ if (isset($_POST['submit'])) {
             if ($matchN == false) {
                 $messaggioPerForm .= '<li>Il nome del gatto è troppo corto per essere inserito</li>';
             }
-            if (strlen($descrizione) < 10) {
+            if ($matchD == false) {
                 $messaggioPerForm .= '<li>Inserire una descrizione di almeno 10 caratteri per il gatto</li>';
             }
             $messaggioPerForm .= '</ul></div>';
