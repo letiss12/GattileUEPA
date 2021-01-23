@@ -1,7 +1,7 @@
 function mostraErrore(target) {
     var newAvviso = document.createElement("strong");
     newAvviso.className = "erroreForm";
-    var newContenuto = document.createTextNode("Seleziona alemno una casella per proseguire");
+    var newContenuto = document.createTextNode("Seleziona almeno una casella per proseguire");
     newAvviso.appendChild(newContenuto);
     var p = target.parentNode; 
     p.appendChild(newAvviso);
