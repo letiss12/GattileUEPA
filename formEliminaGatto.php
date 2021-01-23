@@ -24,7 +24,7 @@ if ($connessioneRiuscita == false) {
             $nome = $gatto['Nome'];
             $nomeF = $gatto.$ID;
             $nomeF = trim($nomeF);
-            $defForm .= '<span><input type="checkbox" name="delete[]" value="' . $ID . '" id="' . $nomeF . '"/><span>';
+            $defForm .= '<input type="checkbox" name="delete[]" value="' . $ID . '" id="' . $nomeF . '"/>';
             $defForm .= '<label for="' . $nomeF . '">' . $nome . '</label><br />';
         }
 
