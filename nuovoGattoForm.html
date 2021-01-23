@@ -6,17 +6,18 @@
     <title>Registra gatto - Rifugio U.E.P.A.</title>
     <meta name="title" content="Registra un gatto al Rifugio U.E.P.A. di Tribano" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/> 
+    <script type="text/javascript" src="checkFormGatto.js"></script>
 
 </head>
 
-<body>
+<body onload="caricamento()">
     <div id="contenuto">
         <h2>Registra un nuovo gatto</h2>
         <p>Ogni nuovo arrivato merita tanto amore!</p>
 
     </div>
 
-    <form method="POST" action="nuovoGatto.php">
+    <form method="POST" action="nuovoGatto.php" onsubmit="return validateForm()">
 
         <messaggiForm />
 
@@ -24,7 +25,7 @@
             <legend>Dati del gatto</legend>
 
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" maxlength="30" value="<valoreNome />"/></br>
+            <span><input type="text" id="nome" name="nome" maxlength="30" value="<valoreNome />"/></span></br>
 
             <p>Genere:</p>
             <div>
@@ -37,7 +38,7 @@
             </div>
 
             <label for="descrizione">Descrizione:</label> 
-            <textarea id="descrizione" name="descrizione" value="<valoreDescr />" rows="3" cols="50"></textarea>
+            <span><textarea id="descrizione" name="descrizione" value="<valoreDescr />" rows="3" cols="50"></textarea></span>
 
             <p>È gia stato adottato?</p>
             <div>   
