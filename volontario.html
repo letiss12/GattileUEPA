@@ -11,7 +11,7 @@
     <script type="text/javascript" src="checkFormVolontario.js"></script>
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
 </head>
-<body>
+<body onload="caricamento()">
      <div id="contenutoVolontario">
         <h2>Diventa un volontario del Rifugio</h2>
         <p>I micetti di ringraziano!</p>
@@ -19,7 +19,7 @@
      
      <div>
 
-        <form method="POST" action="nuovoVolontario.php" >
+        <form method="POST" action="nuovoVolontario.php" onsubmit="return validateForm()">
 
             <messaggiForm />
 
