@@ -24,9 +24,9 @@ if (isset($_POST['submit'])) {
         $matchN = flase;
     }
     if ($matchN == true) {
-        echo "match true";
+        $messaggioPerForm = '<p>match true</p>';
     } else if ($matchN == flase) {
-        echo "match false"
+        $messaggioPerForm = '<p>match false</p>';
     }
 
     $dbAccess = new DBAccess();
@@ -41,9 +41,9 @@ if (isset($_POST['submit'])) {
             $dbAccess->closeDBConnection();
 
             if($risultatoInserimento == false){
-                $messaggioPerForm = '<div class="messForm"><p>Si è verificato un errore nella registrazione del gatto, riprova per favore.</p></div>';
+                $messaggioPerForm .= '<div class="messForm"><p>Si è verificato un errore nella registrazione del gatto, riprova per favore.</p></div>';
             } else if ($risultatoInserimento == true)  {
-                $messaggioPerForm = '<div class="messForm"><p>Un nuovo piccolo felino è stato registrato al rifugio!</p></div>';
+                $messaggioPerForm .= '<div class="messForm"><p>Un nuovo piccolo felino è stato registrato al rifugio!</p></div>';
                 $nome = ''; $descrizione = '';
             }
         }
