@@ -67,11 +67,11 @@ function validateForm() {
     var corretto = false;
     var list = document.getElementsByTagName('input');
     for (var i = 0; i < list.length; i++) {
-        if (lista[i].type == 'checkbox' && lista[i].checked) { 
+        if (lista[i].type == "checkbox" && lista[i].checked) { 
             corretto = true;
         }
     }    
-    if(corretto) {
+    if(!corretto) {
         alert("Seleziona almeno una casella");  
     }
     return corretto;
