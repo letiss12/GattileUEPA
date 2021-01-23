@@ -13,15 +13,18 @@
     <meta name="author" content="" />
     <meta name="language" content="italian it" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
+    <script type="text/javascript" src="checkFormCaselle.js"></script>
 
 </head>
 <body>
     <div class="contenutoGenerale">
         <h2>Modifica status adottato / non adottato dei gatti</h2>
-        <form method="POST" action="modificaGatto.php">
+        <span>
+        <form method="POST" action="modificaGatto.php" onsubmit="return controlla(this)">
             <messaggiForm />
             <contenutoForm />
         </form>
+        </span>
 
     </div>
 
