@@ -84,28 +84,25 @@ function validateForm()
 }
 
 
-function controllo() {
+
+*/
+function mostraErrore() {
+    var elemento = document.createElement("strong");
+    elemento.className = "erroreForm";
+    elemento.appendChild(document.createTextNode("Almeno una casella deve essere selezionata"));
+    var p = input.parentNode; 
+    p.appendChild(elemento); 
+}
+
+function controlla(x) {
     var scelto = false;
-    for (i=0; i < document.formEliminaGatti.delete.length; i++) {
-        if (document.formEliminaGatti.delete[i].checked) {
+    for (var i=0; i < x.elements.length; i++) {
+        if (x.elements[i].type && x.elements[i].type =="checkbox" && x.elements[i].checked) {
             scelto = true;
         }
     }
-    if (!scelto) {
-        alert("Selezionare almeno un'opzione");
-        return (false);
+    if (!scelto){
+    mostraErrore(); 
     }
-    return (true);
-}
-*/
-
-function controlla(frm) {
-    var rv = false;
-    for (var i=0;i<frm.elements.length;i++){
-    if (frm.elements[i].type && frm.elements[i].type.toLowerCase() =="checkbox" && frm.elements[i].checked) rv=true;
-    }
-    if (!rv){
-    alert("Almeno uno dei campi devono essere spuntati!"); 
-    }
-    return rv;
+    return scelto;
     }
