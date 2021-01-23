@@ -1,9 +1,12 @@
 function mostraErrore(target) {
+    var p = target.parentNode; 
+    if (p.children.length == 2) {
+        p.removeChild(p.children[1]);
+    }
     var newAvviso = document.createElement("strong");
     newAvviso.className = "erroreForm";
     var newContenuto = document.createTextNode("Seleziona almeno una casella per proseguire");
     newAvviso.appendChild(newContenuto);
-    var p = target.parentNode; 
     p.appendChild(newAvviso);
     
 
