@@ -79,6 +79,15 @@ function validateForm() {
 
 
 */
+function mostraErrore(target) {
+    var newStrong = document.createElement("strong");
+    var newContenuto = document.createTextNode("Seleziona almeno una casella");
+    newStrong.appendChild(newContenuto);
+    var p = target.parentNode; 
+    p.appendChild(newStrong);
+    
+
+}
 
 function controlla(x) {
     var scelto = false;
@@ -87,22 +96,10 @@ function controlla(x) {
             scelto = true;
         }
     }
+    var target = x.elements[0];
     if (!scelto){
          alert("Seleziona almeno una casella");
+         mostraErrore(target);
     }
     return scelto;
     }
-
-
-    /*
-function Controlla(ff){
-    var conta=0
-    for(var i=0;i<ff.elements['checkarray[]'].length;i++)
-    if(ff.elements['checkarray[]'][i].checked)conta++
-    if(conta==0){
-    alert('Selezionare almeno un check')
-    return false
-}   else return true
-}
-
-*/
