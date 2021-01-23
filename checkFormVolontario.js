@@ -4,7 +4,7 @@ var campiForm = {
 	"dataNascita": ["Inserisci la tua data di nascita in formato GG/MM/AAAA", /^(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19\d{2}|20\d{2})$/],
     "citta": ["Inserisci il nome della città in cui risiedi", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/],
 	"telefono": ["Inserisci il tuo numero di telefono (cellulare o fisso)", /\d{9,10}/],
-	"oreVol": ["Inserisci in formato numerico il numero di ore che puoi dedicare al volontariato", /\d{1,3}/],
+	"oreVol": ["Inserisci in formato numerico il numero di ore che puoi dedicare al volontariato", /^[1-9]{1}[0-9]{0,2}$/],
 	"motivazione": ["Spiega per quale motivo vorresti diventare volontario presso il Rifugio U.E.P.A.", /.{30,}/]
 };
 
