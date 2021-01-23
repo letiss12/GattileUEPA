@@ -55,21 +55,18 @@ function controlloCheckbox()
 {
   var list = document.getElementsByTagName('input');
   var controllo = false;
-  for (var i = 0; controllo == false && i < list.length; i++) {
-    if (lista[i].type == 'checkbox') {
-       if (lista[i].checked) {
-           controllo = true;}
-    }
+  for (var i = 0; i < list.length; i++) {
+    if (lista[i].type == 'checkbox' && lista[i].checked) { 
+        controllo = true;}
   }
   return controllo;
 }
 
 function validateForm()
 {
-    var corretto = true;
+    var corretto = false;
     corretto = controlloCheckbox()
-    if(!corretto)
-    {
+    if(!corretto) {
         alert("Seleziona almeno una casella");  
     }
     return corretto;
