@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $imm = '';
 
     $matchN = '';
-    $regexN = '/^[a-zA-Z]+/';
+    $regexN = '/^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/';
     if (preg_match($regexN, $nome)) {
         $matchN = true;
     } else {
