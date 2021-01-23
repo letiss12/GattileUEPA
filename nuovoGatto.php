@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $genere = $_POST['genere'];
     $imm = '';
 
-    $matchN = '';
+    $matchN = false;
     $regexN = '/^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/';
     if (preg_match($regexN, $nome)) {
         $matchN = true;
