@@ -96,7 +96,7 @@ function controlla(x) {
             scelto = true;
         }
     }
-    var target = x.elements[0];
+    var target = x;
     if (!scelto){
          alert("Seleziona almeno una casella");
          mostraErrore(target);
