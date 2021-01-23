@@ -1,8 +1,10 @@
-/*var campiForm = {
+var campiForm = {
     "nome": ["Inserisci il nome del gatto", /^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/ ],
     "descrizione" : ["Inserisci una breve descrizione del gatto", /.{10,}/]
 	};
 
+
+    /*
 function campoDefault(input) {
     input.value = "";
 }
@@ -47,7 +49,7 @@ function validateForm() {
         corretto = corretto && risultato;
     }
     return corretto;
-}*/
+}
 
 function controlloCheckbox()
 {
@@ -64,10 +66,35 @@ function controlloCheckbox()
 
 function validateForm()
 {
+    var corretto = true;
+
+    for (var key in campiForm) {
+        var input = document.getElementsByTagName(input)
+        var risultato = validazioneCampo(input);
+        corretto = corretto && risultato;
+    }
+    return corretto;
+
+
     if(!controlloCheckbox())
     {
         alert("Seleziona almeno una casella");  
         return false;
     }
     return true;
+}
+*/
+
+function controllo() {
+    var scelto = false;
+    for (i=0; i < document.formEliminaGatti.delete.length; i++) {
+        if (document.formEliminaGatti.delete[i].checked) {
+            scelto = true;
+        }
+    }
+    if (!scelto) {
+        alert("Selezionare almeno un'opzione");
+        return (false);
+    }
+    return (true);
 }
