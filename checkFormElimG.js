@@ -49,7 +49,7 @@ function validateForm() {
     }
     return corretto;
 }
-*/
+
 
 function controlloCheckbox()
 {
@@ -61,11 +61,16 @@ function controlloCheckbox()
   }
   return controllo;
 }
+*/
 
-function validateForm()
-{
+function validateForm() {
     var corretto = false;
-    corretto = controlloCheckbox()
+    var list = document.getElementsByTagName('input');
+    for (var i = 0; i < list.length; i++) {
+        if (lista[i].type == 'checkbox' && lista[i].checked) { 
+            corretto = true;
+        }
+    }    
     if(!corretto) {
         alert("Seleziona almeno una casella");  
     }
@@ -73,15 +78,7 @@ function validateForm()
 }
 
 
-
-/*
-function mostraErrore() {
-    var elemento = document.createElement("strong");
-    elemento.className = "erroreForm";
-    elemento.appendChild(document.createTextNode("Almeno una casella deve essere selezionata"));
-    var p = input.parentNode; 
-    p.appendChild(elemento); 
-}
+    /*
 
 function controlla(x) {
     var scelto = false;
@@ -91,7 +88,7 @@ function controlla(x) {
         }
     }
     if (!scelto){
-        mostraErrore();
+         alert("Seleziona almeno una casella");
     }
     return scelto;
     }
