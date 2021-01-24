@@ -4,7 +4,7 @@ namespace DB;
 
 class DBAccess {
     private const HOST_DB = "localhost";
-    private const USERNAME = "lscudele";
+    private const USERNAME = "lscudeleeeee";
     private const PASSWORD = "suehaiHi6sie1fie";
     private const DATABASE_NAME = "lscudele";
 
@@ -14,6 +14,7 @@ class DBAccess {
 
         $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
         if (!$this->connection) {
+            throw new Exception('C\'è stato un errore durante l\'apertura del database');
             return false;
         } else {
             return true;
