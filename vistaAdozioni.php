@@ -11,7 +11,7 @@ try {
     $connessioneRiuscita = $dbAccess->openDBConnection();
 } 
 catch(Throwable $t) {
-    //header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
+    header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
     echo "pagina non trovata";
     //$t->getMessage();
 }
