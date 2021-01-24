@@ -6,12 +6,21 @@ use DB\DBAccess;
 $paginaHTML = file_get_contents('elencoVolontari.html');
 
 $dbAccess = new dbAccess();
-$connessioneRiuscita = $dbAccess->openDBConnection();
 
-if ($connessioneRiuscita == false) {
-    die ("C'è stato un errore durante l'apertura del database");
-    // si chiude senza dare una risposta all'utente fare un try catch
-} else {
+try {
+    $connessioneRiuscita = $dbAccess->openDBConnection();
+} 
+catch(Throwable $t) {
+    header("Refresh: 3; url = /home.html", true, 301);
+    echo $e->getMessage();
+}
+catch(Exception $e) {
+    header("Refresh: 3; url = /home.html", true, 301);
+    echo $e->getMessage();
+}
+  
+if ($connessioneRiuscita) {
+
     $listaVolontari = $dbAccess->getListaVolontari();
     $dbAccess->closeDBConnection();
 
