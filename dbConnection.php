@@ -14,7 +14,10 @@ class DBAccess {
 
         $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
         if (!$this->connection) {
-            throw new Exception($this->connection->mysqli_connect_error() . " C'è stato un errore durante l'apertura del database ");
+            $ecc = $this->connection->mysqli_connect_error();
+            $mess = " C'è stato un errore durante l'apertura del database ";
+            $ecc = $ecc.$mess;
+            throw new Exception($ecc);
             return false;
         } else {
             return true;
