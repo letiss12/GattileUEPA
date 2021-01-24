@@ -5,6 +5,7 @@ use DB\DBAccess;
 $paginaHTML = file_get_contents('adozioni.html');
 
 $dbAccess = new dbAccess();
+$connessioneRiuscita = false;
 
 try {
     $connessioneRiuscita = $dbAccess->openDBConnection();
