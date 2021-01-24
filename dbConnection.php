@@ -13,8 +13,6 @@ class DBAccess {
     public function openDBConnection() {
 
         $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
-        // ritorna false se non viene inserito correttamente altrimenti ritorna l'oggetto di tipo connessione
-
         if (!$this->connection) {
             return false;
         } else {
