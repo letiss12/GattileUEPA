@@ -11,11 +11,11 @@ try {
     $connessioneRiuscita = $dbAccess->openDBConnection();
 } 
 catch(Throwable $t) {
-    header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
+    //header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
     echo $t->getMessage();
 }
 catch(Exception $e) {
-    header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
+    //header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
     echo $e->getMessage();
 }
 
