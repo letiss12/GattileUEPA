@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
             if($risultatoInserimento == false){
                 $messaggioPerForm .= '<div class="messForm"><p>Si è verificato un errore nella registrazione del gatto, riprova per favore.</p></div>';
             } else if ($risultatoInserimento == true)  {
-                $messaggioPerForm .= '<div class="messForm"><p>Un nuovo piccolo felino è stato registrato al rifugio!</p></div>';
+                $messaggioPerForm .= '<div class="messForm"><p>Un nuovo piccolo felino è stato registrato al rifugio!</p><button><a href="vistaGatti.php">Torna alla Gestione Gatti</a></button></div>';
                 $nome = ''; $descrizione = '';
             }
         }
