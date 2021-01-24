@@ -44,8 +44,7 @@ if ($connessioneRiuscita == true) {
                 $defGatti .= '<span><dt>'. $gatto['Nome'] . '</dt>';
                 $defGatti .= '<dd>';
                 $defGatti .= '<img src="immagini'. DIRECTORY_SEPARATOR. 'gatti'. DIRECTORY_SEPARATOR. $gatto['NomeImm'] . '" alt="' . $gatto['AltImm'] . '" />';
-                $defGatti .= '<p>' . $checkGenere . '</p>';
-                $defGatti .= '<p>' . $gatto['Descrizione'] . '</p>';
+                $defGatti .= '<p>' .$checkGenere . '</br>' . $gatto['Descrizione'] . '</p>';
                 $defGatti .= '</dd></span>';
             }    
             
