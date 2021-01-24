@@ -12,13 +12,11 @@ try {
 } 
 catch(Throwable $t) {
     header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
-    echo $t->getMessage();
-    //echo "C'è stato un errore durante l'apertura del database";
+    echo "C'è stato un errore durante l'apertura del database";
 }
 catch(Exception $e) {
     header("Refresh: 3; url = /lscudele/chi_siamo.html", true, 301);
-    echo $e->getMessage();
-    //echo "C'è stato un errore durante l'apertura del database";
+    echo "C'è stato un errore durante l'apertura del database";
 }
 
 
