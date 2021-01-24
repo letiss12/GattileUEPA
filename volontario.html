@@ -3,18 +3,43 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Diventa Volontario - Rifugio U.E.P.A.</title>
-    <meta name="title" content="Diventa un volontario del Rifugio U.E.P.A. di Tribano" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <meta name="title" content="Volontariato - Rifugio U.E.P.A. di Tribano" />
+    <meta name="description" content="Vuoi diventare volontario del gattile? Invia subito la tua candidatura tramite il nostro sito ufficiale." />
+    <meta name="keywords" content= "gattile, rifugio, tribano, gatti, adottare gatti, veneto"/>
+    <meta name="author" content="Letizia Scudeler, Sofia Zangrande, Eva Masiero" />
     <meta name="language" content="italian it" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <script type="text/javascript" src="checkFormVolontario.js"></script>
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
+    <script type="text/javascript" src="checkFormVolontario.js"></script>
 </head>
 <body onload="caricamento()">
-     <div id="contenutoVolontario">
-        <h2>Diventa un volontario del Rifugio</h2>
-        <p>I micetti di ringraziano!</p>
+    <div id="header">
+<ul class="aiutiNascosti">
+  <li><a href="#menu">Vai al menu</a></li>
+  <li><a href="#contenutoVolontario">Vai al contenuto</a></li>
+</ul>
+    <img class="logo" src="immagini/logo_gattile.png" alt="Logo silhouette di un gatto"/>
+    <h1>Rifugio <abbr title="Unione Europea Protezione Animali">U.E.P.A.</abbr> di Tribano</h1>
+    <h2>Adotta un micio anche tu!</h2>
+</div>
+
+    <ul class="topnav" id="menu">
+        <li xml:lang= "en"><a href="home.html">Home</a></li>
+        <li><a href="chi_siamo.html">Chi siamo</a></li>
+        <li><a href="come_aiutarci.html">Come aiutarci</a></li>
+        <li><a href="vistaAdozioni.php">Adozioni</a></li>
+        <li id="currentlink">Volontariato</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+
+<div id="breadcrumb">
+    <p> Ti trovi in: <span xml:lang="en"><a href="home.html">Home</a></span> --> <a href="come_aiutarci.html">Come aiutarci</a> --> Volontariato</p>
+</div>
+
+     <div id="contentVolontario">
+        <h1>Diventa un volontario del Rifugio</h1>
+        <p>I micetti ti ringraziano!</p>
      </div>
      
      <div>
@@ -29,7 +54,7 @@
                 <span><input type="text" id="nome" name="nome" maxlength="30" value="<valoreNome />" /></span><br />
                 <label for="cognome">Cognome:</label>
                 <span><input type="text" id="cognome" name="cognome" maxlength="30" value="<valoreCognome />" /></span><br />
-                <label for="dataNascita">Data di Nascita (gg/mm/aaaa):</label>
+                <label for="dataNascita">Data di Nascita <abbr title="giorno, mese, anno">(gg/mm/aaaa)</abbr>:</label>
                 <span><input type="text" id="dataNascita" name="dataNascita" maxlength="10" value="<valoreData />" /></span><br />
                 <label for="citta">Città di residenza:</label>
                 <span><input type="text" id="citta" name="citta" maxlength="30" value="<valoreCitta />"/></span><br />
@@ -37,9 +62,9 @@
                 <span><input type="text" id="telefono" name="telefono" maxlength="10" value="<valoreTelefono />" /></span><br />
             </fieldset>
 
-            <fieldset>
+            <fieldset id="info">
                 <legend>Informazioni Generali</legend>
-                <p>Hai già svolto volontariato presso altri enti?</p>
+                <p>Hai già svolto volontariato presso altri enti?</p>
                 <div>
                 <input type="radio" id="noVolontario" name="volontariato" value="0" checked>
                 <label for="noVolontario">No, mai</label>
@@ -55,9 +80,9 @@
                 </div>
                 <div>
                 <input type="radio" id="siAnimali" name="animali" value="1">
-                <label for="siAnimali">Si, certo</label><br>
+                <label for="siAnimali">Si</label><br>
                 </div>
-                <label for="oreVol">Quante ore a settimana puoi dedicare al volontariato? </label>
+                <label for="oreVol">Quante ore a settimana puoi dedicarci?</label>
                 <span><input type="text" id="oreVol" name="oreVol" maxlength="3" value="<valoreOre />"/></span><br />
                 <label for="motivazione">Perché desideri diventare un volontario?</label> 
                 <span><textarea id="motivazione" name="motivazione" value="<valoreMotiv />" rows="5" cols="50"></textarea></span>
@@ -65,11 +90,20 @@
 
             <fieldset>
                 <legend>Inoltra la tua candidatura</legend>
-                <button type="submit" name="submit">Invia!</button>
+                <button id="buttonVolontario" type="submit" name="submit">Invia!</button>
             </fieldset>
             
         </form>
 
-        </div>
+    </div>
+
+<a class="aiutoTornaSu" href="volontario.html">Torna su</a>
+
+<div id="footer">
+   <img id="imgValidCode" src="immagini/validxhtml10.png" alt="html valido" />
+   <img id="imgValidCSS" src="immagini/vcss-blue.gif" alt="css valido" />
+   <p>Via Torre 5, Tribano (PD) <br/>Cellulare: 3496148848 Mail:info@uepa.it </p>
+   
+  </div>
     </body>
     </html>
