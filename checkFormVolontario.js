@@ -21,7 +21,7 @@ function caricamento() {
 
 function mostraErrore(input) {
     var elemento = document.createElement("strong");
-    elemento.className = "erroreForm";
+    elemento.className = "errore";
     elemento.appendChild(document.createTextNode(campiForm[input.id][0]));
     var p = input.parentNode; 
     p.appendChild(elemento); 
