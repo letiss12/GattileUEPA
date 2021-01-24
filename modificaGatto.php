@@ -42,7 +42,7 @@ if (isset($_POST['final_update'])) {
                 if ($risB == true) {
                     $mess .= '<p>Hai aggiunto ai gatti non adottati ' . $contB . ' gatto/i</p>';
                 }
-                $mess .= '<button><a href="vistaGatti.php">Torna alla Gestione Gatti </a></button></div>';
+                $mess .= '<button><a href="vistaGatti.php">Torna alla Gestione Gatti</a></button></div>';
             }
 
         } else {
