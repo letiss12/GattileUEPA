@@ -5,11 +5,21 @@ use DB\DBAccess;
 $paginaHTML = file_get_contents('adozioni.html');
 
 $dbAccess = new dbAccess();
-$connessioneRiuscita = $dbAccess->openDBConnection();
 
-if ($connessioneRiuscita == false) {
-    die ("C'è stato un errore durante l'apertura del database");
-} else {
+try {
+    $connessioneRiuscita = $dbAccess->openDBConnection();
+} 
+catch(Throwable $t) {
+    header("Refresh: 3; url = /chi_siamo.html", true, 301);
+    echo $e->getMessage();
+}
+catch(Exception $e) {
+    header("Refresh: 3; url = /chi_siamo.html", true, 301);
+    echo $e->getMessage();
+}
+
+if ($connessioneRiuscita == true) {
+   
     $listaG = $dbAccess->getListaGatti();
     $dbAccess->closeDBConnection();
 
