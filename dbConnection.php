@@ -135,10 +135,10 @@ class DBAccess {
 
     public function getNumAdottati() {
 
-        $queryCount = " SELECT COUNT(*) FROM gatti WHERE adozione=1 ";
+        $queryCount = " SELECT * FROM gatti WHERE adozione=1 ";
         $queryResult = mysqli_query($this->connection, $queryCount);
-
-        return $queryResult;
+        $rows = mysqli_num_rows($queryResult);
+        return $rows;
     }
     
     public function eliminaGatto($ID) {
