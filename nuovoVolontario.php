@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
     $motivazione = htmlentities($motivazione);
 
-    $mess =   $checkT . ' ' . $checkO . ' ' . $checkM;
+    $mess = $checkN . ' ' . $checkCo . ' ' . $checkCi . ' ' . $checkD . ' ' .  $checkT . ' ' . $checkO . ' ' . $checkM;
 
     /*
     $dbAccess = new DBAccess();
