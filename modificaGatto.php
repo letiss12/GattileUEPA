@@ -9,13 +9,23 @@ $mess = '<div class="messForm">';
 
 if (isset($_POST['final_update'])) {
     $dbAccess = new DBAccess();
-    $connessioneRiuscita = $dbAccess->openDBConnection();
+    $connessioneRiuscita = false;
 
-    if ($connessioneRiuscita == false) {
-        die ("C'è stato un errore durante l'apertura del database");
-    } else {
-
+    try {
+        $connessioneRiuscita = $dbAccess->openDBConnection();
+    } 
+    catch(Throwable $t) {
+        header("Refresh: 3; url = /lscudele/home.html", true, 301);
+        echo "C'è stato un errore durante l'apertura del database";
+    }
+    catch(Exception $e) {
+        header("Refresh: 3; url = /lscudele/home.html", true, 301);
+        echo "C'è stato un errore durante l'apertura del database";
+    }
     
+
+    if ($connessioneRiuscita == true) {
+        
         $cont = 0;
         if ( isset($_POST['updateAdot']) || isset($_POST['updateNonAdot']) )  {
 
