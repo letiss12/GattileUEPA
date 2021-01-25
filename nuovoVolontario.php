@@ -23,35 +23,38 @@ if (isset($_POST['submit'])) {
 
     $checkN = '';
     if (preg_match($regexNCC, $nome)) {
-        $checkN = true;
-    } else { $checkN = false; }
+        $checkN = "1";
+    } else { $checkN = "0"; }
     $checkCo = '';
     if (preg_match($regexNCC, $cognome)) {
-        $checkCo = true;
-    } else { $checkCo = false; }
+        $checkCo = "1";
+    } else { $checkCo = "0"; }
     $checkCi = '';
     if (preg_match($regexNCC, $citta)) {
-        $checkCi = true;
-    } else { $checkCi = false; }
+        $checkCi = "1";
+    } else { $checkCi = "0"; }
     $checkD = '';
     if (preg_match($regexD, $dataNascita)) {
-        $checkD = true;
-    } else { $checkD = false; }
+        $checkD = "1";
+    } else { $checkD = "0"; }
     $checkT = '';
     if (preg_match($regexT, $telefono)) {
-        $checkT = true;
-    } else { $checkT = false; }
+        $checkT = "1";
+    } else { $checkT = "0"; }
     $checkO = '';
     if (preg_match($regexO, $ore)) {
-        $checkO = true;
-    } else { $checkO = false; }
+        $checkO = "1";
+    } else { $checkO = "0"; }
     $checkM = '';
     if (preg_match($regexM, $motivazione)) {
-        $checkO = true;
-    } else { $checkO = false; }
+        $checkO = "1";
+    } else { $checkO = "0"; }
 
     $motivazione = htmlentities($motivazione);
 
+    $mess = $checkN . ' ' . $checkCo . ' ' . $checkCi . ' ' . $checkD . ' ' . $checkT . ' ' . $checkO . ' ' . $checkM;
+
+    /*
     $dbAccess = new DBAccess();
     $connessioneRiuscita = false;
 
@@ -120,7 +123,9 @@ $paginaHTML = str_replace('<valoreData />', $dataNascita, $paginaHTML);
 $paginaHTML = str_replace('<valoreCitta />', $citta, $paginaHTML);
 $paginaHTML = str_replace('<valoreTelefono />', $telefono, $paginaHTML);
 $paginaHTML = str_replace('<valoreOre />', $ore, $paginaHTML);
-$paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);
+$paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);*/
+}
+$paginaHTML = str_replace('<messaggiForm />', $mess, $paginaHTML);*/
 echo $paginaHTML;
 
 ?>
