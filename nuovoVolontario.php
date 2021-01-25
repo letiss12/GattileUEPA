@@ -47,8 +47,8 @@ if (isset($_POST['submit'])) {
     } else { $checkO = "0"; }
     $checkM = '';
     if (preg_match($regexM, $motivazione)) {
-        $checkO = "1";
-    } else { $checkO = "0"; }
+        $checkM = "1";
+    } else { $checkM = "0"; }
 
     $motivazione = htmlentities($motivazione);
 
