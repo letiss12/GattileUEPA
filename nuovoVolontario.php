@@ -76,7 +76,9 @@ if (isset($_POST['submit'])) {
         if ($checkN == true && $checkCo == true && $checkD == true && $checkCi == true && $checkT == true && $checkO == true && $checkM == true ) {
             $risultatoInserimento = $dbAccess->inserisciVolontario($nome, $cognome, $dataNascita, $citta, $telefono, $volontario, $animali, $ore, $motivazione);
             $dbAccess->closeDBConnection();
-            $messaggioPerForm .= '<p>ok</p>';
+            $messaggioPerForm .= '<p>inizio</p>';
+            if ($risultatoInserimento == true) {$messaggioPerForm .= '<p>ok</p>';} 
+            else if ($risultatoInserimento == false) {$messaggioPerForm .= '<p> no ok</p>';}
 
             if($risultatoInserimento == false){
                 $messaggioPerForm .= '<div class="messForm"><p class="errore>Si è verificato un errore nell\'invio della tua richiesta. Riprova per favore.</p></div>';
