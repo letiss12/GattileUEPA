@@ -23,38 +23,37 @@ if (isset($_POST['submit'])) {
 
     $checkN = '';
     if (preg_match($regexNCC, $nome)) {
-        $checkN = "1";
-    } else { $checkN = "0"; }
+        $checkN = true;
+    } else { $checkN = false; }
     $checkCo = '';
     if (preg_match($regexNCC, $cognome)) {
-        $checkCo = "1";
-    } else { $checkCo = "0"; }
+        $checkCo = true;
+    } else { $checkCo = false; }
     $checkCi = '';
     if (preg_match($regexNCC, $citta)) {
-        $checkCi = "1";
-    } else { $checkCi = "0"; }
+        $checkCi = true;
+    } else { $checkCi = false; }
     $checkD = '';
     if (preg_match($regexD, $dataNascita)) {
-        $checkD = "1";
-    } else { $checkD = "0"; }
+        $checkD = true;
+    } else { $checkD = false; }
     $checkT = '';
     if (preg_match($regexT, $telefono)) {
-        $checkT = "1";
-    } else { $checkT = "0"; }
+        $checkT = true;
+    } else { $checkT = false; }
     $checkO = '';
     if (preg_match($regexO, $ore)) {
-        $checkO = "1";
-    } else { $checkO = "0"; }
+        $checkO = true;
+    } else { $checkO = false; }
     $checkM = '';
     if (preg_match($regexM, $motivazione)) {
-        $checkM = "1";
-    } else { $checkM = "0"; }
+        $checkM = true;
+    } else { $checkM = false; }
 
     $motivazione = htmlentities($motivazione);
 
-    $mess = $checkN . ' ' . $checkCo . ' ' . $checkCi . ' ' . $checkD . ' ' .  $checkT . ' ' . $checkO . ' ' . $checkM;
+    
 
-    /*
     $dbAccess = new DBAccess();
     $connessioneRiuscita = false;
 
@@ -124,8 +123,6 @@ $paginaHTML = str_replace('<valoreCitta />', $citta, $paginaHTML);
 $paginaHTML = str_replace('<valoreTelefono />', $telefono, $paginaHTML);
 $paginaHTML = str_replace('<valoreOre />', $ore, $paginaHTML);
 $paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);*/
-}
-$paginaHTML = str_replace('<messaggiForm />', $mess, $paginaHTML);
-echo $paginaHTML;
+
 
 ?>
