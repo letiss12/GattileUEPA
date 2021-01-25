@@ -19,7 +19,7 @@ catch(Exception $e) {
     echo "C'è stato un errore durante l'apertura del database";
 }
 
-$cont = '';
+$cont = ''; $gatti = '';
 if ($connessioneRiuscita == true) {
 
     $gatti = $dbAccess->getNumAdottati();
