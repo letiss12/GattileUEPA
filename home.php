@@ -19,16 +19,16 @@ catch(Exception $e) {
     echo "C'è stato un errore durante l'apertura del database";
 }
 
-$cont = ''; $gatti = '';
 if ($connessioneRiuscita == true) {
 
     $gatti = $dbAccess->getNumAdottati();
     $dbAccess->closeDBConnection();
 
-    $cont = '<p>Al momento sono stati adottati già '. $gatti . ' gatti! Unisciti alla comunity!</p>';
+    //$cont = '<p>Al momento sono stati adottati già '. $gatti . ' gatti! Unisciti alla comunity!</p>';
+    echo str_replace("<contaGatti />", $gatti, $paginaHTML);
 
 }
 
-str_replace("<contaGatti />", $gatti, $paginaHTML);
-echo $paginaHTML;
+//str_replace("<contaGatti />", $gatti, $paginaHTML);
+//echo $paginaHTML;
 ?>
