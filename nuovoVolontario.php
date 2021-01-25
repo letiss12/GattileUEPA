@@ -77,19 +77,17 @@ if (isset($_POST['submit'])) {
             $risultatoInserimento = $dbAccess->inserisciVolontario($nome, $cognome, $dataNascita, $citta, $telefono, $volontario, $animali, $ore, $motivazione);
             $dbAccess->closeDBConnection();
             $messaggioPerForm .= '<p>inizio</p>';
-            if ($risultatoInserimento == true) {$messaggioPerForm .= '<p>ok</p>';} 
-            else if ($risultatoInserimento == false) {$messaggioPerForm .= '<p> no ok</p>';}
-
-            if($risultatoInserimento == false){
-                $messaggioPerForm .= '<div class="messForm"><p class="errore>Si è verificato un errore nell\'invio della tua richiesta. Riprova per favore.</p></div>';
-            } else if ($risultatoInserimento == true)  {
-                $messaggioPerForm .= '<div class="messForm"><p class="completato>La tua richiesta è stata inviata correttamente, un sentito grazie da parte dello staff e di tutti i gatti!</p></div>';
+            if ($risultatoInserimento == true) {
+                $messaggioPerForm .= '<div class="messForm"><p class="completato">La tua richiesta è stata inviata correttamente, un sentito grazie da parte dello staff e di tutti i gatti!</p></div>';
                 $nome = ''; $cognome = ''; $dataNascita = ''; $citta = ''; $telefono = ''; $volontario = ''; $animali = ''; $ore = ''; $motivazione = '';
+            } 
+            else if ($risultatoInserimento == false) {
+                $messaggioPerForm .= '<div class="messForm"><p class="errore">Si è verificato un errore nell\'invio della tua richiesta. Riprova per favore.</p></div>';
             }
 
         } else {
             $dbAccess->closeDBConnection();
-            $messaggioPerForm .= '<div class="messForm><ul>';
+            $messaggioPerForm .= '<div class="messForm"><ul>';
             if ($checkN == false) {
                 $messaggioPerForm .= '<li>Il nome inserito è troppo corto</li>';
             }
