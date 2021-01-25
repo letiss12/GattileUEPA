@@ -2,21 +2,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>Rimuovi volontario - Rifugio U.E.P.A.</title>
-
-    <meta name="title" content="" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <title>Rimuovi Volontario - Rifugio U.E.P.A.</title>
+    <meta name="title" content="Rimuovi Volontario - Rifugio U.E.P.A. di Tribano" />
+    <meta name="author" content="Letizia Scudeler, Sofia Zangrande, Eva Masiero" />
     <meta name="language" content="italian it" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
+    <link rel="stylesheet" ink type="text/css" href="style/stampa.css" media="print"/> 
     <script type="text/javascript" src="checkFormCaselle.js"></script>
-
 </head>
+
 <body>
-    <div class="contenutoGenerale">
-        <h2>Rimuovi un volontario </h2>
+	
+    <div id="header">
+        <ul class="aiutiNascosti">
+          <li><a href="#menu">Vai al menu</a></li>
+          <li><a href="#contentRVol">Vai al contenuto</a></li>
+        </ul>
+            <img class="logo" src="immagini/logo_gattile.png" alt="Logo silhouette di un gatto"/>
+            <h1>Rifugio <abbr title="Unione Europea Protezione Animali">U.E.P.A.</abbr> di Tribano</h1>
+            <h2>Adotta un micio anche tu!</h2>
+        </div>
+        
+        <ul class="topnav" id="menu">
+              <li xml:lang= "en"><a href="home.php">Home</a></li>
+              <li><a href="chi_siamo.html">Chi siamo</a></li>
+              <li><a href="come_aiutarci.html">Come aiutarci</a></li>
+              <li><a href="vistaAdozioni.php">Adozioni</a></li>
+              <li><a href="nuovoVolontario.php">Volontariato</a></li>
+              <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        
+        <div id="breadcrumb">
+            <p> Ti trovi in: <a href="gestione.php">Gestione Admin</a> --> <a href="vistaVolontari.php">Gestisci i Volontari</a> --> Rimuovi Volontario</p>
+        </div>
+    <div class="contenutoGenerale" id="contentRVol">
+        <h1>Rimuovi un volontario dalla lista</h1>
         <span>
         <form method="POST" action="eliminaVolontario.php" onsubmit="return controlla(this)">
             <messaggiForm />
