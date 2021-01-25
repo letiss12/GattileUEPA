@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
 
     if ($connessioneRiuscita == true) {
         
-        if ($checkN && $checkCo && $checkD && $checkCi && $checkT && $checkO && $checkM ) {
+        if ($checkN == true && $checkCo == true && $checkD == true && $checkCi == true && $checkT == true && $checkO == true && $checkM == true ) {
             $risultatoInserimento = $dbAccess->inserisciVolontario($nome, $cognome, $dataNascita, $citta, $telefono, $volontario, $animali, $ore, $motivazione);
             $dbAccess->closeDBConnection();
 
@@ -84,25 +84,25 @@ if (isset($_POST['submit'])) {
         } else {
             $dbAccess->closeDBConnection();
             $messaggioPerForm = '<div class="messForm><ul>';
-            if (!$checkN) {
+            if ($checkN == false) {
                 $messaggioPerForm .= '<li>Il nome inserito è troppo corto</li>';
             }
-            if (!$checkCo) {
+            if ($checkCo == false) {
                 $messaggioPerForm .= '<li>Il cognome inserito è troppo corto</li>';
             }
-            if (!$checkD) {
+            if ($checkD == false) {
                 $messaggioPerForm .= '<li>La data di nascita è stata inserita in modo errato, la forma corretta è GG/MM/AAAA</li>';
             }
-            if (!$checkCi) {
+            if ($checkCi == false) {
                 $messaggioPerForm .= '<li>Il nome della città inserita è troppo corto</li>';
             }
-            if (!$checkT) {
+            if ($checkT == false) {
                 $messaggioPerForm .= '<li>Il numero di telefono inserito è troppo corto</li>';
             }
-            if (!$checkO) {
+            if ($checkO == false) {
                 $messaggioPerForm .= '<li>Inserire un numero maggiore di zero</li>';
             }
-            if (!$checkM) {
+            if ($checkM == false) {
                 $messaggioPerForm .= '<li>La tua spiegazione deve essere di almeno 30 caratteri</li>';
             }
    
