@@ -31,6 +31,4 @@ if ($connessioneRiuscita == true) {
 
 }
 
-//str_replace("<contaGatti />", $gatti, $paginaHTML);
-//echo $paginaHTML;
 ?>
