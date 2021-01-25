@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
 </head>
 <!--onload="caricamento()"-->
-<body >
+<body onload="caricamento()">
     <div id="header">
 <ul class="aiutiNascosti">
   <li><a href="#menu">Vai al menu</a></li>
@@ -45,7 +45,7 @@
      <div>
 
         <!--onsubmit="return validateForm()"-->
-        <form method="POST" action="nuovoVolontario.php" >
+        <form method="POST" action="nuovoVolontario.php" onsubmit="return validateForm()">
 
             <messaggiForm />
 
