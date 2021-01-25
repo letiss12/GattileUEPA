@@ -24,8 +24,10 @@ if ($connessioneRiuscita == true) {
     $gatti = $dbAccess->getNumAdottati();
     $dbAccess->closeDBConnection();
 
-    //$cont = '<p>Al momento sono stati adottati già '. $gatti . ' gatti! Unisciti alla comunity!</p>';
-    echo str_replace("<contaGatti />", $gatti, $paginaHTML);
+    $cont = '<p>Al momento sono stati adottati già '. $gatti . ' gatti! Unisciti alla comunity!</p>';
+
+
+    echo str_replace("<contaGatti />", $cont, $paginaHTML);
 
 }
 
