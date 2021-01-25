@@ -35,10 +35,10 @@ if ($connessioneRiuscita == true) {
             $ID = $vol['ID'];
             $nome = $vol['Nome'];
             $cognome = $vol['Cognome'];
-            $nomcom = $nome.$cognome;
-            $nomcom = trim($nomcom);
-            $defForm .= '<input type="checkbox" name="delete[]" value="' . $ID . '" id="' . $nomcom . '"/>';
-            $defForm .= '<label for="' . $nomcom . '">' . $nome . ' ' . $cognome . '</label><br />';
+            $nomID = $nome.$ID;
+            $nomID = trim($nomID);
+            $defForm .= '<input type="checkbox" name="delete[]" value="' . $ID . '" id="' . $nomID . '"/>';
+            $defForm .= '<label for="' . $nomID . '">' . $nome . ' ' . $cognome . '</label><br />';
         }
 
         $defForm .= '</fieldset><fieldset><legend>Rimuovi i volontari selezionati</legend><button type="submit" value="submit" name="final_delete">Elimina</button></fieldset>';
