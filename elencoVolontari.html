@@ -1,23 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>Lista Volontari - Rifugio U.E.P.A.</title>
-
-    <meta name="robots" content="noindex" />
-    <meta name="author" content="" />
+    <title>Gestisci i Volontari - Rifugio U.E.P.A.</title>
+    <meta name="title" content="Gestisci i Volontari - Rifugio U.E.P.A. di Tribano" />
+    <meta name="author" content="Letizia Scudeler, Sofia Zangrande, Eva Masiero" />
     <meta name="language" content="italian it" />
-
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <link rel="stylesheet" type="text/css" href="style/web.css" media="handheld, screen"/>
-
+    <link rel="stylesheet" ink type="text/css" href="style/stampa.css" media="print"/> 
 </head>
 
 <body>
-    <div class="contenutoGenerale">
-        <h2>Gestione Volontari del Rifugio</h2>
+	
+    <div id="header">
+        <ul class="aiutiNascosti">
+          <li><a href="#menu">Vai al menu</a></li>
+          <li><a href="#contentGVol">Vai al contenuto</a></li>
+        </ul>
+            <img class="logo" src="immagini/logo_gattile.png" alt="Logo silhouette di un gatto"/>
+            <h1>Rifugio <abbr title="Unione Europea Protezione Animali">U.E.P.A.</abbr> di Tribano</h1>
+            <h2>Adotta un micio anche tu!</h2>
+        </div>
+        
+        <ul class="topnav" id="menu">
+              <li xml:lang= "en"><a href="home.php">Home</a></li>
+              <li><a href="chi_siamo.html">Chi siamo</a></li>
+              <li><a href="come_aiutarci.html">Come aiutarci</a></li>
+              <li><a href="vistaAdozioni.php">Adozioni</a></li>
+              <li><a href="nuovoVolontario.php">Volontariato</a></li>
+              <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        
+        <div id="breadcrumb">
+            <p> Ti trovi in: <a href="gestione.php">Gestione Admin</a> --> Gestisci i Volontari</p>
+        </div>
+
+    <div class="contenutoGenerale" id="contentGVol">
+        <h1>Gestione Volontari del Rifugio</h1>
         <ul>
             <li><a href="formEliminaVolontario.php">Rimuovi volontari</a></li>
             <li><a href="gestione.php">Torna alla pagina di gestione</a></li>
@@ -25,7 +46,7 @@
         <p>Qui sono elencate tutte le persone che hanno dato la loro disponibilità al Rifugio</p>
     </div>
 
-    <div id="contElencoVolontari">
+    <div id="contElencoVolontari" class="definitionList">
         <elencoVolontari />
 
     </div>
