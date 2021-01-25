@@ -125,7 +125,7 @@ $paginaHTML = str_replace('<valoreTelefono />', $telefono, $paginaHTML);
 $paginaHTML = str_replace('<valoreOre />', $ore, $paginaHTML);
 $paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);*/
 }
-$paginaHTML = str_replace('<messaggiForm />', $mess, $paginaHTML);*/
+$paginaHTML = str_replace('<messaggiForm />', $mess, $paginaHTML);
 echo $paginaHTML;
 
 ?>
