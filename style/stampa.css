@@ -53,6 +53,9 @@ h3 {
 SEZIONE HEADER
 ---------------
 */
+.buttonAdmin {
+  display: none;
+}
 
 #header {
   padding: 1.0em;
@@ -289,4 +292,15 @@ SEZIONE FOOTER
 
 #imgValidCSS{
   display: none;
+}
+
+.contenutoGenerale ul {
+  padding: 1.5em;
+    -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+        border-radius: 20px;
+         border-style: ridge;
+           border-color: orange;
+             line-height: 1.5em;
+               margin-bottom: 0.5em;
 }
