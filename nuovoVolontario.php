@@ -122,7 +122,7 @@ $paginaHTML = str_replace('<valoreData />', $dataNascita, $paginaHTML);
 $paginaHTML = str_replace('<valoreCitta />', $citta, $paginaHTML);
 $paginaHTML = str_replace('<valoreTelefono />', $telefono, $paginaHTML);
 $paginaHTML = str_replace('<valoreOre />', $ore, $paginaHTML);
-$paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);*/
+$paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);
 
 
 ?>
