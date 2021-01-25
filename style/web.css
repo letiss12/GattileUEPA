@@ -47,6 +47,17 @@ a:visted {
 SEZIONE HEADER
 ---------------
 */
+.buttonAdmin {  float: right;  
+  width: 10%;
+  background-color: white;
+  border: 0.1em solid #F29BA2;
+   padding: 0.2em 0.2em;  
+   text-decoration: underline;
+     display: block;
+       font-size: 1em;
+        cursor: pointer;
+          margin-top: 0.5em;  
+          margin-left: 0.5em;}
 
 #header {
   padding: 1.0em;
@@ -816,4 +827,17 @@ SEZIONE FOOTER
 
 #imgValidCSS{
   float: right;
+}
+
+.erroreForm {
+  color: red;
+  display: block;
+}
+
+.errore {
+  color: red;
+}
+
+.completato {
+  color: green;
 }
