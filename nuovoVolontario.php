@@ -16,14 +16,15 @@ if (isset($_POST['submit'])) {
     $animali = $_POST['animali'];
     $ore = $_POST['oreVol'];
     $motivazione = $_POST['motivazione'];
-    $regexNCC = '/^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/';
+    $regexCC = '/^[a-zA-Z]{2}[a-zA-Z\s\']{0,28}$/';
+    $regexN = '/^[a-zA-Z]{2}[a-zA-Z\s]{0,28}$/';
     $regexD = '/^(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19\d{2}|20\d{2})$/';
     $regexT = '/\d{9,10}/';
     $regexO = '/^[1-9]{1}[0-9]{0,2}$/';
     $regexM = '/.{30,}/';
 
     $checkN = '';
-    if (preg_match($regexNCC, $nome)) {
+    if (preg_match($regexN, $nome)) {
         $checkN = true;
     } else { $checkN = false; }
     $checkCo = '';
@@ -76,7 +77,7 @@ if (isset($_POST['submit'])) {
         if ($checkN == true && $checkCo == true && $checkD == true && $checkCi == true && $checkT == true && $checkO == true && $checkM == true ) {
             $risultatoInserimento = $dbAccess->inserisciVolontario($nome, $cognome, $dataNascita, $citta, $telefono, $volontario, $animali, $ore, $motivazione);
             $dbAccess->closeDBConnection();
-            $messaggioPerForm .= '<p>inizio</p>';
+    
             if ($risultatoInserimento == true) {
                 $messaggioPerForm .= '<div class="messForm"><p class="completato">La tua richiesta è stata inviata correttamente, un sentito grazie da parte dello staff e di tutti i gatti!</p></div>';
                 $nome = ''; $cognome = ''; $dataNascita = ''; $citta = ''; $telefono = ''; $volontario = ''; $animali = ''; $ore = ''; $motivazione = '';
