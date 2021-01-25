@@ -4,6 +4,7 @@ use DB\DBAccess;
 $paginaHTML = file_get_contents('volontario.html');
 $messaggioPerForm = '';
 $nome = ''; $cognome = ''; $dataNascita = ''; $citta = ''; $telefono = ''; $volontario = ''; $animali = ''; $ore = ''; $motivazione = '';
+
 if (isset($_POST['submit'])) { 
 
     $nome = $_POST['nome'];
@@ -123,6 +124,8 @@ $paginaHTML = str_replace('<valoreCitta />', $citta, $paginaHTML);
 $paginaHTML = str_replace('<valoreTelefono />', $telefono, $paginaHTML);
 $paginaHTML = str_replace('<valoreOre />', $ore, $paginaHTML);
 $paginaHTML = str_replace('<valoreMotiv />', $motivazione, $paginaHTML);
+
+echo $paginaHTML;
 
 
 ?>
