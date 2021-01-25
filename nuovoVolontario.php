@@ -50,13 +50,26 @@ if (isset($_POST['submit'])) {
         $checkO = true;
     } else { $checkO = false; }
 
+    $motivazione = htmlentities($motivazione);
+
     $dbAccess = new DBAccess();
-    $openDBConnection = $dbAccess->openDBConnection();
+    $connessioneRiuscita = false;
 
-    if ($openDBConnection == false) {
-        die ("C'è stato un errore durante l'apertura del database");
-    } else {
+    try {
+        $connessioneRiuscita = $dbAccess->openDBConnection();
+    } 
+    catch(Throwable $t) {
+        header("Refresh: 3; url = /lscudele/home.html", true, 301);
+        echo "C'è stato un errore durante l'apertura del database";
+    }
+    catch(Exception $e) {
+        header("Refresh: 3; url = /lscudele/home.html", true, 301);
+        echo "C'è stato un errore durante l'apertura del database";
+    }
+    
 
+    if ($connessioneRiuscita == true) {
+        
         if ($checkN && $checkCo && $checkD && $checkCi && $checkT && $checkO && $checkM ) {
             $risultatoInserimento = $dbAccess->inserisciVolontario($nome, $cognome, $dataNascita, $citta, $telefono, $volontario, $animali, $ore, $motivazione);
             $dbAccess->closeDBConnection();
